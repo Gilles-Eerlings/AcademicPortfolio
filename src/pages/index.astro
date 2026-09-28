@@ -1,0 +1,435 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro"
+import ProjectCard from "../components/ProjectCard.astro"
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Gilles Eerlings</title>
+
+    <meta
+      name="description"
+      content="Gilles Eerlings — PhD researcher in Human-Centered AI at Hasselt University."
+    />
+  </head>
+
+  <body class="bg-stone-50 text-neutral-900 antialiased">
+	<Navbar/>
+
+    <main class="mx-auto max-w-6xl px-6">
+		<section
+		class="grid items-center gap-12 py-20
+				md:grid-cols-[1.25fr_0.75fr]
+				lg:gap-16 lg:py-24"
+		>
+		<div class="max-w-3xl">
+			<h1
+				class="ml-[-0.08em] text-5xl font-light leading-[0.95]
+						tracking-[-0.03em] sm:text-5xl lg:text-7xl"
+				>
+				Gilles
+				<span class="font-semibold"> Eerlings</span>
+			</h1>
+			<p
+			class="mt-4 text-xs font-mono uppercase text-accent tracking-[0.14em]"
+			>
+			PhD Researcher · Machine Learning & Human-AI Interaction
+			</p>
+
+
+
+<div class="mt-8 max-w-2xl space-y-5 text-lg leading-relaxed text-neutral-600">
+<p>
+  I'm a third-year PhD student at {" "}
+  <a
+  	href="https://www.uhasselt.be/en/instituten-en/digitalfuturelab"
+	target="_blank"
+	rel="noopener noreferrer"
+	class="text-neutral-900 underline decoration-neutral-300
+           underline-offset-4 transition-colors hover:decoration-accent">Hasselt University's Digital Future Lab</a>,
+  where I work at the intersection of machine learning and human-AI
+  interaction under the supervision of{" "}
+  <a
+    href="https://www.krisluyten.net/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-neutral-900 underline decoration-neutral-300
+           underline-offset-4 transition-colors hover:decoration-accent"
+  >
+    Kris Luyten
+  </a>
+  {" "}and{" "}
+  <a
+    href="https://gustavorovelo.net/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-neutral-900 underline decoration-neutral-300
+           underline-offset-4 transition-colors hover:decoration-accent"
+  >
+    Gustavo Rovelo Ruiz
+  </a>.
+</p>
+
+  <p>
+    My research focuses on{" "}
+    <span class="font-medium text-neutral-900">the Rashomon Effect</span>:
+    the fact that multiple machine learning models can perform similarly
+    while behaving differently. I'm interested both in how we can efficiently
+    discover these alternative models and in how their disagreements can be
+    used to support human decision-making.
+  </p>
+
+  <p>
+    More broadly, I study how people make decisions with AI, and how
+    interactive systems can help them reason about uncertainty, disagreement,
+    and alternative model perspectives.
+  </p>
+</div>
+
+			<div class="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm">
+			<a
+				href="https://scholar.google.be/citations?hl=nl&user=4tD_uWkAAAAJ"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-mono uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+			>
+				Google Scholar ↗
+			</a>
+
+			<a
+				href="https://github.com/Gilles-Eerlings"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-mono uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+			>
+				GitHub ↗
+			</a>
+
+			<a
+				href="https://www.linkedin.com/in/gilles-eerlings"
+				target="_blank"
+				rel="noopener noreferrer"
+				class="font-mono uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+			>
+				LinkedIn ↗
+			</a>
+
+			<a
+				href="mailto:gilles.eerlings@uhasselt.be"
+				class="font-mono uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+			>
+				Email →
+			</a>
+			</div>
+			
+		</div>
+
+		<div class="mx-auto w-full max-w-[280px] md:ml-auto lg:max-w-[330px]">
+			<img
+			src="/images/gilles.jpg"
+			alt="Portrait of Gilles Eerlings"
+			class="aspect-[4/5] w-full object-cover object-[50%_58%] rounded-md"
+			/>
+			
+		</div>
+		</section>
+
+		<section id="work" class="py-28">
+			<div class="mb-14 flex items-center gap-5">
+				<span
+				class="font-mono text-xs uppercase tracking-[0.14em] text-accent"
+				>
+				01
+				</span>
+
+				<h2
+				class="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500"
+				>
+				Selected work
+				</h2>
+
+				<div class="h-px flex-1 bg-neutral-200"></div>
+			</div>
+			<ProjectCard
+			acronym="DIVERSE"
+			title="Disagreement-Inducing Vector Evolution for Rashomon Set Exploration"
+			venue="ICLR 2026"
+			authors={[
+				{
+				name: "Gilles Eerlings",
+				self: true,
+				},
+				{
+				name: "Brent Zoomers",
+				url: "https://brent-zoomers.github.io/",
+				},
+				{
+				name: "Jori Liesenborgs",
+				url: "https://research.edm.uhasselt.be/~jori/page/Main/HomePage.html",
+				},
+				{
+				name: "Gustavo Rovelo Ruiz",
+				url: "https://gustavorovelo.net/",
+				},
+				{
+				name: "Kris Luyten",
+				url: "https://www.krisluyten.net/",
+				},
+			]}
+			description="A gradient-free approach for efficiently exploring alternative, similarly performing neural networks and uncovering meaningful disagreement between them."
+			image="/images/diverse.png"
+			imageAlt="Overview of the DIVERSE method for exploring Rashomon sets."
+			projectUrl="/research/diverse"
+			paperUrl="https://openreview.net/pdf?id=kQjSUHC84V"
+			codeUrl="https://github.com/UHasselt-DigitalFutureLab/Diverse"
+			/>
+			<div class="mt-14"></div>
+			<ProjectCard
+			acronym="AI-Spectra"
+			title="A Visual Dashboard for Model Multiplicity to Enhance Informed and Transparent Decision-Making"
+			venue="EICS 2024 Workshops"
+			authors={[
+				{
+				name: "Gilles Eerlings",
+				self: true,
+				},
+				{
+				name: "Sebe Vanbrabant",
+				url: "https://sebev.github.io/",
+				},
+				{
+				name: "Jori Liesenborgs",
+				url: "https://research.edm.uhasselt.be/~jori/page/Main/HomePage.html",
+				},
+				{
+				name: "Gustavo Rovelo Ruiz",
+				url: "https://gustavorovelo.net/",
+				},
+				{
+				name: "Davy Vanacken",
+				url: "https://research.edm.uhasselt.be/dvanacken/",
+				},
+				{
+				name: "Kris Luyten",
+				url: "https://www.krisluyten.net/",
+				},
+			]}
+			description="A visual dashboard for exploring agreement and disagreement across multiple similarly performing AI models, designed to help users compare model predictions without overwhelming them with information."
+			image="/images/ai-spectra.png"
+			imageAlt="AI-Spectra visual dashboard for exploring agreement and disagreement across multiple AI models."
+			projectUrl="/research/ai-spectra"
+			paperUrl="https://link.springer.com/chapter/10.1007/978-3-031-91760-8_5"
+			/>
+			<div class="mt-14"></div>
+			<ProjectCard
+				acronym="ECHO"
+				title="Enhancing Conversational Explainable AI through Tool-Augmented Language Models"
+				venue="EICS 2025"
+				authors={[
+					{
+					name: "Sebe Vanbrabant",
+					url: "https://sebev.github.io/",
+					},
+					{
+					name: "Gilles Eerlings",
+					self: true,
+					},
+					{
+					name: "Gustavo Rovelo Ruiz",
+					url: "https://gustavorovelo.net/",
+					},
+					{
+					name: "Davy Vanacken",
+					url: "https://research.edm.uhasselt.be/dvanacken/",
+					},
+				]}
+				description="A conversational framework that combines large language models with specialized tools to let users explore and interrogate the behavior of AI models through natural language."
+				image="/images/echo.png"
+				imageAlt="ECHO interface showing a conversational explanation and an editable tool execution plan."
+				projectUrl="/research/echo"
+				paperUrl="https://doi.org/10.1145/3734191"
+			/>
+			<div class="mt-10">
+  <a
+    href="/research"
+    class="font-mono text-xs uppercase tracking-[0.08em]
+           text-neutral-600 transition-colors hover:text-accent"
+  >
+    View all research →
+  </a>
+</div>
+		</section>
+
+<section id="news" class="">
+  <div class="mb-14 flex items-center gap-5">
+    <span class="font-mono text-xs uppercase tracking-[0.14em] text-accent">
+      02
+    </span>
+
+    <h2 class="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
+      News
+    </h2>
+
+    <div class="h-px flex-1 bg-neutral-200"></div>
+  </div>
+
+<div class="max-w-5xl mx-auto space-y-7">
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      April 2026
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      Presented DIVERSE at ICLR 2026
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      I presented DIVERSE as a poster in Rio de Janeiro and had many
+      interesting discussions around model multiplicity and alternative
+      model perspectives.
+    </p>
+  </article>
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      February 2026
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      DIVERSE accepted at ICLR 2026
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      DIVERSE introduces a gradient-free approach for efficiently exploring
+      similarly performing neural networks that disagree in meaningful ways.
+    </p>
+  </article>
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      October 2025
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      Flanders AI Research Day 2025
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      I presented “AI Needs More Opinions,” a poster on the challenges and
+      opportunities of model multiplicity in human-AI decision-making.
+    </p>
+  </article>
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      April 2025
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      UHasselt Research Day
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      I presented the direction of my PhD research on model multiplicity
+      and its role in human-AI decision-making.
+    </p>
+  </article>
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      March 2025
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      IUI 2025 in Cagliari
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      I attended IUI 2025 in Cagliari, where I spent the week meeting
+      researchers, discussing ideas, and getting to know the community.
+    </p>
+  </article>
+
+  <article>
+    <time class="text-sm text-neutral-400">
+      October 2024
+    </time>
+
+    <h3 class="mt-1 text-lg font-semibold text-neutral-900">
+      Flanders AI Research Day 2024
+    </h3>
+
+    <p class="mt-0.5 leading-relaxed text-neutral-600">
+      I presented AI-Spectra, a visual dashboard for exploring agreement
+      and disagreement across similarly performing AI models.
+    </p>
+  </article>
+
+</div>
+</section>
+    </main>
+
+<footer
+  class="mx-auto mt-10 flex max-w-6xl flex-col gap-4
+         border-t border-neutral-200 px-6 py-8
+         text-sm text-neutral-500
+         sm:flex-row sm:items-center sm:justify-between"
+>
+  <div>
+    <p class="font-medium text-neutral-700">
+      Gilles Eerlings
+    </p>
+
+    <p class="mt-1">
+      Hasselt University · Belgium
+    </p>
+  </div>
+
+  <div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-[0.08em]">
+    <a
+      href="https://scholar.google.be/citations?hl=nl&user=4tD_uWkAAAAJ"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-colors hover:text-accent"
+    >
+      Scholar ↗
+    </a>
+
+    <a
+      href="https://github.com/Gilles-Eerlings"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-colors hover:text-accent"
+    >
+      GitHub ↗
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/gilles-eerlings"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="transition-colors hover:text-accent"
+    >
+      LinkedIn ↗
+    </a>
+
+    <a
+      href="mailto:gilles.eerlings@uhasselt.be"
+      class="transition-colors hover:text-accent"
+    >
+      Email →
+    </a>
+  </div>
+</footer>
+  </body>
+</html>

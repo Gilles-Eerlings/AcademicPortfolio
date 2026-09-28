@@ -1,0 +1,160 @@
+---
+interface Author {
+  name: string;
+  url?: string;
+  self?: boolean;
+}
+
+interface Props {
+  title: string;
+  acronym?: string;
+  venue: string;
+  authors: Author[];
+  description: string;
+  image: string;
+  imageAlt: string;
+  projectUrl: string;
+  paperUrl?: string;
+  codeUrl?: string;
+}
+
+const {
+  title,
+  acronym,
+  venue,
+  authors,
+  description,
+  image,
+  imageAlt,
+  projectUrl,
+  paperUrl,
+  codeUrl,
+} = Astro.props;
+---
+
+<article
+  class="group grid gap-8 border-b border-neutral-200 pb-12
+         md:grid-cols-[1.1fr_0.9fr] md:gap-12 items-center"
+>
+  <!-- Project image -->
+  <a
+    href={projectUrl}
+    class="block overflow-hidden"
+  >
+    <img
+      src={image}
+      alt={imageAlt}
+      class=" w-full "
+    />
+  </a>
+
+  <!-- Project content -->
+  <div class="flex flex-col justify-between py-1">
+    <div>
+      <!-- Venue -->
+      <p
+        class="font-mono text-xs uppercase tracking-[0.12em]
+               text-accent"
+      >
+        {venue}
+      </p>
+
+      <!-- Full title -->
+    <h3
+    class="mt-2 text-2xl font-medium leading-tight
+            tracking-[-0.02em] text-neutral-900
+            sm:text-3xl"
+    >
+    <a
+        href={projectUrl}
+        class="transition-colors hover:text-accent"
+    >
+        {acronym && (
+        <span >
+            {acronym}:{" "}
+        </span>
+        )}
+
+        {title}
+    </a>
+    </h3>
+
+      <!-- Authors -->
+      <p class="mt-4 text-sm leading-6 text-neutral-500">
+        {
+          authors.map((author, index) => (
+            <>
+              {index > 0 && <span>{" · "}</span>}
+
+              {author.self ? (
+                <span class="font-semibold text-accent">
+                  {author.name}
+                </span>
+              ) : author.url ? (
+                <a
+                  href={author.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="underline decoration-neutral-300
+                         underline-offset-4 transition-colors
+                         hover:text-accent hover:decoration-accent"
+                >
+                  {author.name}
+                </a>
+              ) : (
+                <span>{author.name}</span>
+              )}
+            </>
+          ))
+        }
+      </p>
+
+      <!-- Description -->
+      <p
+        class="mt-5 max-w-lg text-[1.05rem] leading-7
+               text-neutral-600"
+      >
+        {description}
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div class="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+      <a
+        href={projectUrl}
+        class="font-mono text-xs uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+      >
+        Project →
+      </a>
+
+      {
+        paperUrl && (
+          <a
+            href={paperUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono text-xs uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+          >
+            Paper ↗
+          </a>
+        )
+      }
+
+      {
+        codeUrl && (
+          <a
+            href={codeUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono text-xs uppercase tracking-[0.08em]
+					text-neutral-600 transition-colors hover:text-accent"
+          >
+            Code ↗
+          </a>
+        )
+      }
+    </div>
+  </div>
+</article>
