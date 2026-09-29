@@ -1,0 +1,80 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import Citation from "../components/Citation.astro";
+const authors = [
+  {
+    name: "Gilles Eerlings",
+    self: true,
+    image: "/images/gilles.jpg"
+  },
+  {
+    name: "Sebe Vanbrabant",
+    url: "https://brent-zoomers.github.io/",
+    image: "/images/authors/sebe.jpeg"
+  },
+  {
+    name: "Jori Liesenborgs",
+    url: "https://research.edm.uhasselt.be/~jori/page/Main/HomePage.html",
+    image: "/images/authors/jori.jpeg"
+  },
+  {
+    name: "Gustavo Rovelo Ruiz",
+    url: "https://gustavorovelo.net/",
+    image: "/images/authors/gustavo.jpg"
+  },
+{
+    name: "Davy Vanacken",
+    url: "https://research.edm.uhasselt.be/dvanacken/",
+    image: "/images/authors/davy.jpg"
+  },
+  {
+    name: "Kris Luyten",
+    url: "https://www.krisluyten.net/",
+    image: "/images/authors/kris.png"
+  },
+];
+
+
+const AISpectraBibtex = `@inproceedings{
+    eerlings2024ai-spectra
+    author="Eerlings, Gilles and Vanbrabant, Sebe and Liesenborgs, Jori and Rovelo Ruiz, Gustavo and Vanacken, Davy and Luyten, Kris",
+    editor="Zaina, Luciana and Campos, Jos{\'e} Creissac and Spano, Davide and Luyten, Kris and Palanque, Philippe and van der Veer, Gerrit and Ebert, Achim and Humayoun, Shah Rukh and Memmesheimer, Vera",
+    title="AI-Spectra: A Visual Dashboard for Model Multiplicity to Enhance Informed and Transparent Decision-Making",
+    booktitle="Engineering Interactive Computer Systems. EICS 2024 International Workshops",
+    year="2025",
+    publisher="Springer Nature Switzerland",
+    address="Cham",
+    pages="55--73",
+    isbn="978-3-031-91760-8"
+}`;
+---
+
+<ProjectLayout
+  acronym="AI-Spectra"
+  title="A Visual Dashboard for Model Multiplicity to Enhance Informed and Transparent Decision-Making"
+  venue="Engineering Interactive Computer Systems. EICS 2024 International Workshops, Springer"
+  authors={authors}
+  abstract="We present an approach, AI-Spectra, to leverage model multiplicity for interactive systems. Model multiplicity means using slightly different AI models yielding equally valid outcomes or predictions for the same task, thus relying on many simultaneous “expert advisors” that can have different opinions. Dealing with multiple AI models that generate potentially divergent results for the same task is challenging for users to deal with. It helps users understand and identify AI models are not always correct and might differ, but it can also result in an information overload when being confronted with multiple results instead of one. AI-Spectra leverages model multiplicity by using a visual dashboard designed for conveying what AI models generate which results while minimizing the cognitive effort to detect consensus among models and what type of models might have different opinions. We use a custom adaptation of Chernoff faces for AI-Spectra; Chernoff Bots. This visualization technique lets users quickly interpret complex, multivariate model configurations and compare predictions across multiple models. Our design is informed by building on established Human-AI Interaction guidelines and well know practices in information visualization. We validated our approach through a series of experiments training a wide variation of models with the MNIST dataset to perform number recognition. Our work contributes to the growing discourse on making AI systems more transparent, trustworthy, and effective through the strategic use of multiple models."
+  heroImage="/images/ai-spectra.png"
+  links={[
+    {
+      label: "Paper",
+      url: "https://link.springer.com/chapter/10.1007/978-3-031-91760-8_5",
+      external: true,
+    },
+    {
+      label: "Poster",
+      url: "/posters/ai-spectra.pdf",
+      external: true,
+    },
+    {
+      label: "Cite",
+      url: "#citation",
+    },
+  ]}
+>
+<Citation bibtex={AISpectraBibtex} />
+    
+
+
+</ProjectLayout>
