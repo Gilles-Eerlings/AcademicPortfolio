@@ -1,0 +1,34 @@
+---
+interface Props {
+  bibtex: string;
+  title?: string;
+}
+
+const {
+  bibtex,
+  title = "Citation",
+} = Astro.props;
+
+const id = `citation-${Math.random().toString(36).slice(2)}`;
+---
+
+<section id="citation">
+  <div class="mb-8 flex items-center gap-5">
+    <h2
+      class="font-mono text-xs uppercase
+             tracking-[0.14em] text-neutral-500"
+    >
+      {title}
+    </h2>
+
+    <div class="h-px flex-1 bg-neutral-200"></div>
+  </div>
+
+  <div class="relative">
+    <pre
+      class="overflow-x-auto bg-neutral-100 p-6
+             font-mono text-sm leading-6 text-neutral-700"
+    ><code id={`${id}-bibtex`}>{bibtex}</code></pre>
+
+  </div>
+</section>

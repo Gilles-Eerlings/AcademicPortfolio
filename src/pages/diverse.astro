@@ -1,0 +1,76 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import Citation from "../components/Citation.astro";
+const authors = [
+  {
+    name: "Gilles Eerlings",
+    self: true,
+    image: "/images/gilles.jpg"
+  },
+  {
+    name: "Brent Zoomers",
+    url: "https://brent-zoomers.github.io/",
+    image: "/images/authors/brent.jpg"
+  },
+  {
+    name: "Jori Liesenborgs",
+    url: "https://research.edm.uhasselt.be/~jori/page/Main/HomePage.html",
+    image: "/images/authors/jori.jpeg"
+  },
+  {
+    name: "Gustavo Rovelo Ruiz",
+    url: "https://gustavorovelo.net/",
+    image: "/images/authors/gustavo.jpg"
+  },
+  {
+    name: "Kris Luyten",
+    url: "https://www.krisluyten.net/",
+    image: "/images/authors/kris.png"
+  },
+];
+
+
+const diverseBibtex = `@inproceedings{
+    eerlings2026diverse,
+    title={{DIVERSE}: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration},
+    author={Gilles Eerlings and Brent Zoomers and Jori Liesenborgs and Gustavo Rovelo Ruiz and Kris Luyten},
+    booktitle={The Fourteenth International Conference on Learning Representations},
+    year={2026},
+    url={https://openreview.net/forum?id=kQjSUHC84V}
+}`;
+---
+
+<ProjectLayout
+  acronym="DIVERSE"
+  title="Disagreement-Inducing Vector Evolution for Rashomon Set Exploration"
+  venue="The International Conference on Learning Representations (ICLR) 2026"
+  authors={authors}
+  abstract="We propose DIVERSE, a framework for systematically exploring the Rashomon set of deep neural networks, the collection of models that match a reference model’s accuracy while differing in their predictive behavior. DIVERSE augments a pretrained model with Feature-wise Linear Modulation (FiLM) layers and uses Covariance Matrix Adaptation Evolution Strategy (CMA-ES) to search a latent modulation space, generating diverse model variants without retraining or gradient access. Across MNIST, PneumoniaMNIST, and CIFAR-10, DIVERSE uncovers multiple high-performing yet functionally distinct models. Our experiments show that DIVERSE offers a competitive and efficient exploration of the Rashomon set, making it feasible to construct diverse sets that maintain robustness and performance while supporting well-balanced model multiplicity. While retraining remains the baseline to generate Rashomon sets, DIVERSE achieves comparable diversity at reduced computational cost."
+  heroImage="/images/diverse.png"
+  links={[
+    {
+      label: "Paper",
+      url: "https://openreview.net/pdf?id=kQjSUHC84V",
+      external: true,
+    },
+    {
+      label: "Code",
+      url: "https://github.com/UHasselt-DigitalFutureLab/Diverse",
+      external: true,
+    },
+    {
+      label: "Poster",
+      url: "/posters/diverse.pdf",
+      external: true,
+    },
+    {
+      label: "Cite",
+      url: "#citation",
+    },
+  ]}
+>
+<Citation bibtex={diverseBibtex} />
+    
+
+
+</ProjectLayout>

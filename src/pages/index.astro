@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Navbar from "../components/Navbar.astro"
 import ProjectCard from "../components/ProjectCard.astro"
+import Footer from "../components/Footer.astro"
 ---
 
 <!doctype html>
@@ -145,19 +146,23 @@ import ProjectCard from "../components/ProjectCard.astro"
 
 		<section id="work" class="py-28">
 			<div class="mb-14 flex items-center gap-5">
-				<span
-				class="font-mono text-xs uppercase tracking-[0.14em] text-accent"
-				>
-				01
-				</span>
 
 				<h2
 				class="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500"
 				>
-				Selected work
+				Highlighted work
 				</h2>
+        
 
 				<div class="h-px flex-1 bg-neutral-200"></div>
+
+  <a
+    href="/research"
+    class="font-mono text-xs uppercase tracking-[0.08em]
+           text-neutral-500 transition-colors hover:text-accent"
+  >
+    All research →
+  </a>
 			</div>
 			<ProjectCard
 			acronym="DIVERSE"
@@ -188,7 +193,7 @@ import ProjectCard from "../components/ProjectCard.astro"
 			description="A gradient-free approach for efficiently exploring alternative, similarly performing neural networks and uncovering meaningful disagreement between them."
 			image="/images/diverse.png"
 			imageAlt="Overview of the DIVERSE method for exploring Rashomon sets."
-			projectUrl="/research/diverse"
+			projectUrl="/diverse"
 			paperUrl="https://openreview.net/pdf?id=kQjSUHC84V"
 			codeUrl="https://github.com/UHasselt-DigitalFutureLab/Diverse"
 			/>
@@ -259,21 +264,11 @@ import ProjectCard from "../components/ProjectCard.astro"
 				paperUrl="https://doi.org/10.1145/3734191"
 			/>
 			<div class="mt-10">
-  <a
-    href="/research"
-    class="font-mono text-xs uppercase tracking-[0.08em]
-           text-neutral-600 transition-colors hover:text-accent"
-  >
-    View all research →
-  </a>
 </div>
 		</section>
 
 <section id="news" class="">
   <div class="mb-14 flex items-center gap-5">
-    <span class="font-mono text-xs uppercase tracking-[0.14em] text-accent">
-      02
-    </span>
 
     <h2 class="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
       News
@@ -375,61 +370,9 @@ import ProjectCard from "../components/ProjectCard.astro"
     </p>
   </article>
 
-</div>
-</section>
+    </div>
+    </section>
     </main>
-
-<footer
-  class="mx-auto mt-10 flex max-w-6xl flex-col gap-4
-         border-t border-neutral-200 px-6 py-8
-         text-sm text-neutral-500
-         sm:flex-row sm:items-center sm:justify-between"
->
-  <div>
-    <p class="font-medium text-neutral-700">
-      Gilles Eerlings
-    </p>
-
-    <p class="mt-1">
-      Hasselt University · Belgium
-    </p>
-  </div>
-
-  <div class="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-[0.08em]">
-    <a
-      href="https://scholar.google.be/citations?hl=nl&user=4tD_uWkAAAAJ"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-colors hover:text-accent"
-    >
-      Scholar ↗
-    </a>
-
-    <a
-      href="https://github.com/Gilles-Eerlings"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-colors hover:text-accent"
-    >
-      GitHub ↗
-    </a>
-
-    <a
-      href="https://www.linkedin.com/in/gilles-eerlings"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="transition-colors hover:text-accent"
-    >
-      LinkedIn ↗
-    </a>
-
-    <a
-      href="mailto:gilles.eerlings@uhasselt.be"
-      class="transition-colors hover:text-accent"
-    >
-      Email →
-    </a>
-  </div>
-</footer>
+  <Footer></Footer>
   </body>
 </html>

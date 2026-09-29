@@ -1,0 +1,205 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro"
+
+interface Author {
+  name: string;
+  url?: string;
+  image?: string;
+  self?: boolean;
+}
+
+interface ProjectLink {
+  label: string;
+  url: string;
+  external?: boolean;
+}
+
+interface Props {
+  title: string;
+  acronym?: string;
+  venue: string;
+  authors: Author[];
+  abstract: string;
+  links?: ProjectLink[];
+  heroImage?: string;
+  heroImageAlt?: string;
+}
+
+const {
+  title,
+  acronym,
+  venue,
+  authors,
+  abstract,
+  links = [],
+  heroImage,
+  heroImageAlt = "",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>
+      {acronym ? `${acronym}: ${title}` : title} · Gilles Eerlings
+    </title>
+
+    <meta name="description" content={abstract} />
+  </head>
+
+  <body class="bg-stone-50 text-neutral-900 antialiased">
+    <Navbar />
+
+    <main class="mx-auto max-w-6xl px-6">
+
+      <!-- Project header -->
+      <header class="pb-16 pt-16">
+
+        <!-- Title -->
+        <h1
+          class="text-4xl font-medium leading-[1.05]
+                 tracking-[-0.035em]
+                 sm:text-5xl lg:text-6xl"
+        >
+          {
+            acronym && (
+              <span class="font-semibold">
+                {acronym}:{" "}
+              </span>
+            )
+          }
+
+          {title}
+        </h1>
+
+        <!-- Authors -->
+        <div
+          class="mt-12 grid gap-x-16 gap-y-6
+                 sm:grid-cols-2"
+        >
+          {
+            authors.map((author) => (
+              <div class="flex items-center gap-4">
+                {
+                  author.image && (
+                    <img
+                      src={author.image}
+                      alt=""
+                      class="h-14 w-14 rounded-full object-cover"
+                    />
+                  )
+                }
+
+                {
+                  author.url ? (
+                    <a
+                      href={author.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class:list={[
+                        "text-base transition-colors",
+                        author.self
+                          ? " text-accent hover:text-accent"
+                          : "text-neutral-800 hover:text-accent",
+                      ]}
+                    >
+                      {author.name}
+                    </a>
+                  ) : (
+                    <span
+                      class:list={[
+                        "text-base",
+                        author.self
+                          ? "font-bold text-accent"
+                          : "text-neutral-800",
+                      ]}
+                    >
+                      {author.name}
+                    </span>
+                  )
+                }
+              </div>
+            ))
+          }
+        </div>
+
+        <!-- Venue -->
+        <p
+          class="mt-10 font-mono text-sm tracking-[0.02em]
+                 text-neutral-700"
+        >
+          {venue}
+        </p>
+
+        <!-- Resource links -->
+        {
+          links.length > 0 && (
+            <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+              {links.map((link) => (
+                <a
+                  href={link.url}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  class="font-mono text-xs uppercase tracking-[0.08em]
+                         text-neutral-600 transition-colors
+                         hover:text-accent"
+                >
+                  {link.label}
+                  {link.external ? " ↗" : " →"}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </header>
+
+
+      <!-- Abstract -->
+      <section class="">
+        <div class="mb-8 flex items-center gap-5">
+
+          <h2
+            class="font-mono text-xs uppercase
+                   tracking-[0.14em] text-neutral-500"
+          >
+            Abstract
+          </h2>
+
+          <div class="h-px flex-1 bg-neutral-200"></div>
+        </div>
+
+      <p
+        class="w-full text-base leading-7 text-neutral-600
+              sm:text-lg sm:leading-8"
+      >
+        {abstract}
+      </p>
+      </section>
+      {
+        heroImage && (
+          <figure class="pb-8">
+            <img
+              src={heroImage}
+              alt={heroImageAlt}
+              class="w-full"
+            />
+          </figure>
+        )
+      }
+      <!-- Project-specific content -->
+      <div class="">
+        <slot />
+      </div>
+      
+    </main>
+
+    
+
+<Footer></Footer>
+  </body>
+</html>
