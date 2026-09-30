@@ -1,0 +1,213 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import PublicationItem from "../components/PublicationItem.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Research · Gilles Eerlings</title>
+
+    <meta
+      name="description"
+      content="Research and publications by Gilles Eerlings."
+    />
+  </head>
+
+  <body class="bg-stone-50 text-neutral-900 antialiased">
+    <Navbar />
+
+    <main class="mx-auto max-w-6xl px-6">
+
+      <!-- Intro -->
+      <section class="py-20 lg:py-24">
+        <h1
+          class="text-5xl font-light leading-[0.95]
+                 tracking-[-0.03em] sm:text-5xl lg:text-7xl"
+        >
+          Research
+        </h1>
+
+        <p
+          class="mt-8  text-lg leading-relaxed
+                 text-neutral-600"
+        >
+            I work at the intersection of machine learning and human-AI interaction, studying the Rashomon Effect and how disagreement between similarly performing models can inform human decision-making.
+        </p>
+      </section>
+
+<section class="pb-28 space-y-20">
+
+  <!-- 2026 -->
+  <div class="grid grid-cols-12 gap-x-10">
+    <p>2026</p>
+
+    <div class="col-span-10">
+        <PublicationItem
+            title="From Embeddings to Exploration: Engineering Interactive Latent Space Visualizations for AI Model Sensemaking"
+            authors={[
+                { name: "Sebe Vanbrabant"},
+                { name: "Jarne Thys"},
+                { name: "Gilles Eerlings", self: true },
+                { name: "Kris Luyten"},
+                { name: "Gustavo Rovelo Ruiz"},
+                { name: "Davy Vanacken"},
+            ]}
+            venue="The 18th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS) 2026"
+            links={[
+            {
+                label: "Project",
+                url: "/embeddings-to-exploration",
+            },
+            {
+                label: "Paper",
+                url: "https://dl.acm.org/doi/10.1145/3816764",
+                external: true,
+            },
+            ]}
+        />
+      <PublicationItem
+        title="Reclaiming Knowledge Structuring from Automation: Human-AI Co-Engineering of KC Models"
+        authors={[
+            { name: "Seppe Vandenberk"},
+            { name: "Gilles Eerlings", self: true },
+            { name: "Gustavo Rovelo Ruiz"},
+            { name: "Davy Vanacken"},
+        ]}
+        venue="4th Workshop on Engineering Interactive Systems Embedding AI Technologies"
+        links={[
+          {
+            label: "Project",
+            url: "/hai-kc",
+          },
+          {
+            label: "Paper",
+            url: "http://hdl.handle.net/1942/49489",
+            external: true,
+          },
+        ]}
+      />
+      <PublicationItem
+        title="DIVERSE: Disagreement-Inducing Vector Evolution for Rashomon Set Exploration"
+        authors={[
+          { name: "Gilles Eerlings", self: true },
+          { name: "Brent Zoomers" },
+          { name: "Jori Liesenborgs" },
+          { name: "Gustavo Rovelo Ruiz" },
+          { name: "Kris Luyten" },
+        ]}
+        venue="International Conference on Learning Representations (ICLR) 2026"
+        links={[
+          {
+            label: "Project",
+            url: "/diverse",
+          },
+          {
+            label: "Paper",
+            url: "https://openreview.net/pdf?id=kQjSUHC84V",
+            external: true,
+          },
+          {
+            label: "Code",
+            url: "https://github.com/UHasselt-DigitalFutureLab/Diverse",
+            external: true,
+          },
+        ]}
+      />
+    </div>
+    
+  </div>
+    <div class="grid grid-cols-12 gap-x-10">
+        <p>2025</p>
+        <div class="col-span-10">
+            <PublicationItem
+                title="ECHO: Enhancing Conversational Explainable AI through Tool-Augmented Language Models"
+                authors={[
+                    { name: "Sebe Vanbrabant" },
+                    { name: "Gilles Eerlings", self: true },
+                    { name: "Gustavo Rovelo Ruiz" },
+                    { name: "Davy Vanacken" },
+                ]}
+                venue="The 17th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS) 2025"
+                links={[
+                {
+                    label: "Project",
+                    url: "/echo",
+                },
+                {
+                    label: "Paper",
+                    url: "https://dl.acm.org/doi/full/10.1145/3734191",
+                    external: true,
+                },
+                ]}
+            />
+
+        </div>
+
+    </div>
+    <div class="grid grid-cols-12 gap-x-10">
+        <p>2024</p>
+        <div class="col-span-10">
+            <PublicationItem
+                title="AI-spectra: a visual dashboard for model multiplicity to enhance informed and transparent decision-making"
+                authors={[
+                    { name: "Gilles Eerlings", self: true },
+                    { name: "Sebe Vanbrabant" },
+                    { name: "Jori Liesenborgs"},
+                    { name: "Gustavo Rovelo Ruiz" },
+                    { name: "Davy Vanacken" },
+                    { name: "Kris Luyten"}
+                ]}
+                venue="Engineering Interactive Computer Systems. EICS 2024 International Workshops, Springer "
+                links={[
+                {
+                    label: "Project",
+                    url: "/ai-spectra",
+                },
+                {
+                    label: "Paper",
+                    url: "https://link.springer.com/chapter/10.1007/978-3-031-91760-8_5",
+                    external: true,
+                },
+                ]}
+            />
+            <PublicationItem
+                title="Opportunities and Challenges of Model Multiplicity in Interactive Software Systems"
+                authors={[
+                    { name: "Kris Luyten"},
+                    { name: "Gilles Eerlings", self: true },
+                    { name: "Jori Liesenborgs"},
+                    { name: "Gustavo Rovelo Ruiz" },
+                    { name: "Sebe Vanbrabant" },
+                    { name: "Davy Vanacken" },
+
+                ]}
+                venue="2nd Workshop on Engineering Interactive Systems Embedding AI Technologies"
+                links={[
+                {
+                    label: "Project",
+                    url: "/mm-opp-challenges",
+                },
+                {
+                    label: "Paper",
+                    url: "https://link.springer.com/chapter/10.1007/978-3-031-91760-8_5",
+                    external: true,
+                },
+                ]}
+            />
+        </div>
+    </div>
+    
+
+</section>
+
+    </main>
+
+    <Footer />
+  </body>
+</html>

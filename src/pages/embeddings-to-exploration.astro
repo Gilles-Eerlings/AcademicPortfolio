@@ -1,0 +1,80 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import Citation from "../components/Citation.astro";
+const authors = [
+    {
+    name: "Sebe Vanbrabant",
+    url: "https://brent-zoomers.github.io/",
+    image: "/images/authors/sebe.jpeg"
+  },
+  {
+    name: "Jarne Thys",
+    url: "https://jarnethys.com/",
+    image: "/images/authors/jarne.jpg"
+  },
+  {
+    name: "Gilles Eerlings",
+    self: true,
+    image: "/images/gilles.jpg"
+  },
+      {
+    name: "Kris Luyten",
+    url: "https://www.krisluyten.net/",
+    image: "/images/authors/kris.png"
+  },
+  {
+    name: "Gustavo Rovelo Ruiz",
+    url: "https://gustavorovelo.net/",
+    image: "/images/authors/gustavo.jpg"
+  },
+  {
+    name: "Davy Vanacken",
+    url: "https://research.edm.uhasselt.be/dvanacken/",
+    image: "/images/authors/davy.jpg"
+  },
+
+];
+
+
+const embeddingsBibTex = `@article{
+    vanbrabant2026embeddings,
+    author = {Vanbrabant, Sebe and Thys, Jarne and Eerlings, Gilles and Luyten, Kris and Rovelo Ruiz, Gustavo and Vanacken, Davy},
+    title = {From Embeddings to Exploration: Engineering Interactive Latent Space Visualizations for AI Model Sensemaking},
+    year = {2026},
+    issue_date = {June 2026},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {10},
+    number = {4},
+    url = {https://doi.org/10.1145/3816764},
+    doi = {10.1145/3816764},
+    journal = {Proc. ACM Hum.-Comput. Interact.},
+    month = jun,
+    articleno = {EICS012},
+    numpages = {31},
+    keywords = {Explainable AI, AI Model Sensemaking, Latent Space Exploration, Multidimensional Visual Exploration, Variational Autoencoders, Dimensionality Reduction}
+}`;
+---
+
+<ProjectLayout
+  title="From Embeddings to Exploration: Engineering Interactive Latent Space Visualizations for AI Model Sensemaking"
+  venue="The 18th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS) 2026"
+  authors={authors}
+  abstract="Machine learning systems are often inspected through 2D projections of high-dimensional representations using techniques such as t-SNE or UMAP. While these visualizations provide useful overviews of clustering and similarity, they are inherently static: they display only the existing data points and do not allow users to interactively explore a model’s decision space. We present an interactive exploration system — LAPEX— that uses a Variational Autoencoder (VAE) as a generative proxy over a model’s training distribution, turning the latent space into a navigable workspace for model sensemaking. Unlike static embeddings, the proxy provides an explicit decoding path from latent coordinates to inputs, enabling interaction patterns such as continuous sampling, interpolation between anchors, and region probing. We operationalize these capabilities through a set of interactive probes that augment a familiar scatter-plot overview with generative overlays for comparing transitions between classes and examining sparsely populated regions. A within-subject formative study (N = 16) comparing an interactive VAE-based method to a static t-SNE baseline shows that generative interaction substantially improves counterfactual reasoning and influences how users assess model behavior in sparse or uncertain regions, while static embeddings sometimes provide clearer boundary perception. From these findings, we derive concrete design guidelines and architectural considerations for engineering interactive AI model exploration systems using generative latent representations."
+  links={[
+    {
+      label: "Paper",
+      url: "https://doi.org/10.1145/3816764",
+      external: true,
+    },
+    {
+      label: "Cite",
+      url: "#citation",
+    },
+  ]}
+>
+<Citation bibtex={embeddingsBibTex} />
+    
+
+
+</ProjectLayout>
