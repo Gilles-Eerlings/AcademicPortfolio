@@ -26,15 +26,27 @@ const {
   description,
   links = [],
 } = Astro.props;
+const projectLink = links.find((link) => link.label === "Project");
 ---
 
 <article class="border-b border-neutral-200 py-8 first:pt-0">
-  <h3
-    class="text-xl font-medium leading-snug tracking-[-0.015em]
-           text-neutral-900"
-  >
-    {title}
-  </h3>
+<h3
+  class="text-xl font-medium leading-snug tracking-[-0.015em]
+         text-neutral-900"
+>
+  {
+    projectLink ? (
+      <a
+        href={projectLink.url}
+        class="transition-colors hover:text-accent"
+      >
+        {title}
+      </a>
+    ) : (
+      title
+    )
+  }
+</h3>
 
   <p class="mt-2 text-sm leading-6 text-neutral-600">
     {
