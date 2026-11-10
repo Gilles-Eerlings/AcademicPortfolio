@@ -1,0 +1,79 @@
+---
+import ProjectLayout from "../layouts/ProjectLayout.astro"
+import Citation from "../components/Citation.astro";
+const authors = [
+    {
+    name: "Ruben Boone",
+    image: "/images/authors/ruben.jpeg"
+  },
+{
+    name: "Gilles Eerlings",
+    self: true,
+    image: "/images/gilles.jpg"
+  },
+    {
+    name: "Sebe Vanbrabant",
+    url: "https://sebev.github.io/",
+    image: "/images/authors/sebe.jpeg"
+  },
+    {
+    name: "Davy Vanacken",
+    url: "https://research.edm.uhasselt.be/dvanacken/",
+    image: "/images/authors/davy.jpg"
+  },
+      {
+    name: "Kris Luyten",
+    url: "https://www.krisluyten.net/",
+    image: "/images/authors/kris.png"
+  },
+];
+
+
+const embeddingsBibTex = `@misc{boone2026doespersonalitypersuadeinvestigating,
+      title={Does Personality Persuade? Investigating Personality Trait Prompting and Persuasion in Large Language Models}, 
+      author={Ruben Boone and Gilles Eerlings and Sebe Vanbrabant and Davy Vanacken and Kris Luyten},
+      year={2026},
+      eprint={2611.06572},
+      archivePrefix={arXiv},
+      primaryClass={cs.CY},
+      url={https://arxiv.org/abs/2611.06572}, 
+}`;
+---
+
+<ProjectLayout
+  title="Does Personality Persuade? Investigating Personality Trait Prompting and Persuasion in Large Language Models"
+  venue="Preprint"
+  authors={authors}
+  abstract="Large language models (LLMs) can be prompted to express different personality profiles, but it remains unclear how reliably they
+follow these prompts and whether the personality they express affects their persuasiveness. We address these questions in two
+evaluations. First, we assess Big Five personality prompting with the IPIP-NEO-120, comparing prompt formats across repeated
+generations and measuring trait control, cross-trait spillover, and unconditioned model profiles. Second, we conduct a within-subjects
+study in which participants discuss morally ambiguous decisions with LLM agents prompted to exhibit personality profiles aligned
+to the participant, mismatched, neutral, or unconditioned. Our calibration experiments show that prompted personality profiles
+can be highly reproducible and strongly responsive to requested trait levels, although manipulating one trait can also cause smaller
+changes in other traits. We further find that unconditioned LLMs do not constitute personality-neutral baselines: the models examined
+exhibit systematic and highly consistent personality profiles even without explicit personality instructions. In the user study (N=32),
+personality alignment did not significantly affect perceived persuasiveness, stance switching, or changes in decision confidence.
+Participants changed their initial stance in only 8 of 128 conversations, and we found no significant associations between their OCEAN
+personality traits and susceptibility to persuasion. However, higher self-reported AI persuasion literacy was associated with less
+frequent changes in decision confidence. An exploratory analysis further revealed that agents predominantly relied on logical appeals,
+with other persuasion strategies varying across conditions and dilemmas. Our findings highlight the importance of distinguishing
+between an LLM's ability to express a prompted personality and its actual influence on users, and suggest that AI persuasion literacy
+may influence how users respond to persuasive AI systems."
+  links={[
+    {
+      label: "Paper",
+      url: "https://arxiv.org/pdf/2611.06572",
+      external: true,
+    },
+    {
+      label: "Cite",
+      url: "#citation",
+    },
+  ]}
+>
+<Citation bibtex={embeddingsBibTex} />
+    
+
+
+</ProjectLayout>

@@ -42,6 +42,35 @@ import PublicationItem from "../components/PublicationItem.astro";
       </section>
 
 <section class="pb-28 space-y-20">
+  <!-- 2027 -->
+   <div class="grid grid-cols-12 gap-x-10">
+    <p>2027</p>
+    <div class="col-span-10">
+        <PublicationItem
+            title="Does Personality Persuade? Investigating Personality Trait Prompting and Persuasion in Large Language Models"
+            authors={[
+                { name: "Ruben Boone"},
+                { name: "Gilles Eerlings", self: true },
+                { name: "Sebe Vanbrabant"},
+                { name: "Davy Vanacken"},
+                { name: "Kris Luyten"}
+            ]}
+            venue="Preprint"
+            links={[
+            {
+                label: "Project",
+                url: "/llm-personality-persuasion",
+            },
+            {
+                label: "Paper",
+                url: "https://arxiv.org/pdf/2611.06572",
+                external: true,
+            },
+            ]}
+        />
+    </div>
+
+   </div>
 
   <!-- 2026 -->
   <div class="grid grid-cols-12 gap-x-10">
