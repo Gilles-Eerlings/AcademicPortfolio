@@ -8,6 +8,7 @@ interface Author {
   url?: string;
   image?: string;
   self?: boolean;
+  equalContribution?: boolean;
 }
 
 interface ProjectLink {
@@ -109,6 +110,7 @@ const {
                       ]}
                     >
                       {author.name}
+                      {author.equalContribution && <sup class="ml-0.5 text-[0.7em]">*</sup>}
                     </a>
                   ) : (
                     <span
@@ -120,6 +122,7 @@ const {
                       ]}
                     >
                       {author.name}
+                      {author.equalContribution && <sup class="ml-0.5 text-[0.7em]">*</sup>}
                     </span>
                   )
                 }
@@ -127,6 +130,12 @@ const {
             ))
           }
         </div>
+
+        {authors.some((author) => author.equalContribution) && (
+          <p class="mt-4 text-xs text-neutral-500">
+            * Equal contribution
+          </p>
+        )}
 
         <!-- Venue -->
         <p

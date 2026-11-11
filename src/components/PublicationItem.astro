@@ -86,11 +86,7 @@ const projectLink = links.find((link) => link.label === "Project");
       ))
     }
   </p>
-  {authors.some((author) => author.equalContribution) && (
-    <p class="mt-0.5 text-xs text-neutral-500">
-      * Equal contribution
-    </p>
-  )}
+
   <p class="mt-1 text-sm text-neutral-500">
     {venue}
   </p>
@@ -122,4 +118,9 @@ const projectLink = links.find((link) => link.label === "Project");
       </div>
     )
   }
+    {authors.some((author) => author.equalContribution) && (
+    <p class="mt-0.5 text-xs text-neutral-500">
+      * Equal contribution
+    </p>
+  )}
 </article>
