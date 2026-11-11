@@ -3,6 +3,7 @@ interface Author {
   name: string;
   self?: boolean;
   url?: string;
+  equalContribution?: boolean;
 }
 
 interface Link {
@@ -67,6 +68,7 @@ const projectLink = links.find((link) => link.label === "Project");
               ]}
             >
               {author.name}
+              {author.equalContribution && <sup class="ml-0.5 text-[0.7em]">*</sup>}
             </a>
           ) : (
             <span
@@ -77,13 +79,18 @@ const projectLink = links.find((link) => link.label === "Project");
               ]}
             >
               {author.name}
+              {author.equalContribution && <sup class="ml-0.5 text-[0.7em]">*</sup>}
             </span>
           )}
         </>
       ))
     }
   </p>
-
+  {authors.some((author) => author.equalContribution) && (
+    <p class="mt-0.5 text-xs text-neutral-500">
+      * Equal contribution
+    </p>
+  )}
   <p class="mt-1 text-sm text-neutral-500">
     {venue}
   </p>
